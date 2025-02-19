@@ -107,14 +107,11 @@ export default function CampaignPage() {
         <p className="text-lg font-semibold">Description:</p>
         <p>{description}</p>
       </div>
-      <div className="mb-4">
-        <p className="text-lg font-semibold">Deadline</p>
-        {!isLoadingDeadline && <p>{deadlineDate.toDateString()}</p>}
-      </div>
+
       {!isLoadingBalance && !isLoadingGoal && (
         <div className="mb-4">
           <p className="text-lg font-semibold">
-            Campaign Goal: ${goal?.toString()}
+            Fundraising Goal: ${goal?.toString()}
           </p>
           <div className="relative w-full h-6 bg-gray-700 rounded-full dark:bg-gray-700">
             <div
