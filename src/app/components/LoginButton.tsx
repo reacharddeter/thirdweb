@@ -24,14 +24,14 @@ export const LoginButton = () => {
         await wallet.connect({ client });
         return wallet;
       });
-      activeAccount = wallet.getAccount();
+      activeAccount = wallet?.getAccount();
     } else {
       activeAccount = account;
     }
     // Step 1: fetch the payload from the server
     const payload = await generatePayload({
-      address: account.address,
-      chainId: chain.id,
+      address: account?.address,
+      chainId: chain?.id,
     });
     // Step 2: Sign the payload
     const signatureResult = await signLoginPayload({

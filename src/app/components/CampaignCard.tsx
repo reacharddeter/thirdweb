@@ -1,6 +1,6 @@
 import { getContract } from "thirdweb";
 import { baseSepolia } from "thirdweb/chains";
-import { client } from "../client";
+import { client } from "@/lib/client";
 import { useReadContract } from "thirdweb/react";
 import Link from "next/link";
 

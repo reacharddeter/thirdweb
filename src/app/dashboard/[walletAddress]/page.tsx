@@ -1,7 +1,7 @@
 "use client";
 
 import { getContract } from "thirdweb";
-import { client } from "../../client";
+import { client } from "@/lib/client";
 import { baseSepolia } from "thirdweb/chains";
 import { CROWDFUNDING_FACTORY } from "../../constants/contracts";
 import { useActiveAccount, useReadContract } from "thirdweb/react";
