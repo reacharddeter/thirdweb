@@ -9,6 +9,7 @@ import {
 import { generatePayload, login } from "@/actions/login"; // we'll add this file in the next section
 import { signLoginPayload } from "thirdweb/auth";
 import { createWallet } from "thirdweb/wallets";
+import { client } from "@/lib/client";
 
 export const LoginButton = () => {
   const account = useActiveAccount();
@@ -20,7 +21,7 @@ export const LoginButton = () => {
     if (!account) {
       const wallet = await connect(async () => {
         const wallet = createWallet("io.metamask"); // update this to your wallet of choice or create a custom UI to select wallets
-        await wallet.connect();
+        await wallet.connect({ client });
         return wallet;
       });
       activeAccount = wallet.getAccount();
