@@ -25,6 +25,7 @@ export async function login(payload: VerifyLoginPayloadParams) {
       payload: verifiedPayload.payload,
     });
     cookies().set("jwt", jwt);
+    return verifiedPayload;
   }
 }
 

@@ -30,9 +30,13 @@ export const LoginButton = () => {
     }
     // Step 1: fetch the payload from the server
     const payload = await generatePayload({
-      address: account?.address,
+      address: account?.address ?? "",
       chainId: chain?.id,
     });
+    if (!account) {
+      console.error("Account is undefined!");
+      return; // Handle the case where account is missing (e.g., show an error message)
+    }
     // Step 2: Sign the payload
     const signatureResult = await signLoginPayload({
       account,
@@ -40,8 +44,11 @@ export const LoginButton = () => {
     });
     // Step 3: Send the signature to the server for verification
     const finalResult = await login(signatureResult);
-    if (finalResult)
-      alert(finalResult.valid ? "Login successful" : "Login failed");
+    if (!finalResult) {
+      console.error("Account is undefined!");
+      return; // Handle the case where account is missing (e.g., show an error message)
+    }
+    alert(finalResult.valid ? "Login successful" : "Login failed");
   }
 
   return (

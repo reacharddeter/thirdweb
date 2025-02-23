@@ -7,7 +7,6 @@ import { CROWDFUNDING_FACTORY } from "./constants/contracts";
 import { useReadContract } from "thirdweb/react";
 import CampaignCard from "./components/CampaignCard";
 import moment from "moment";
-import { parseAbiParams } from "thirdweb/utils";
 
 export default function Home() {
   const contract = getContract({
