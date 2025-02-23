@@ -1,7 +1,7 @@
 "use client";
 
 import { baseSepolia } from "thirdweb/chains";
-import { client } from "./client";
+import { client } from "@/lib/client";
 import { getContract } from "thirdweb";
 import { CROWDFUNDING_FACTORY } from "./constants/contracts";
 import { useReadContract } from "thirdweb/react";
