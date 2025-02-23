@@ -7,6 +7,7 @@ import { CROWDFUNDING_FACTORY } from "./constants/contracts";
 import { useReadContract } from "thirdweb/react";
 import CampaignCard from "./components/CampaignCard";
 import moment from "moment";
+import { parseAbiParams } from "thirdweb/utils";
 
 export default function Home() {
   const contract = getContract({
@@ -21,8 +22,6 @@ export default function Home() {
       "function getAllCampaigns() view returns ((address campaignAddress, address owner, string name, uint256 creationTime, uint256 _durationInDays, uint256 _goal,)[])",
     params: [],
   });
-
-  console.log("The Dater Value: ");
 
   return (
     <main className="mx-auto max-w-7xl px-4 mt-4 sm:px-6 lg:px-8">

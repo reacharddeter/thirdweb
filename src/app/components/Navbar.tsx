@@ -70,6 +70,7 @@ const Navbar = () => {
                     Fundraising
                   </p>
                 </Link>
+
                 {account && (
                   <Link href={`/dashboard/${account?.address}`}>
                     <p className="rounded-md px-3 py-2 text-sm font-medium text-slate-700">
@@ -77,6 +78,11 @@ const Navbar = () => {
                     </p>
                   </Link>
                 )}
+                <Link href={"/instructions"}>
+                  <p className="rounded-md px-3 py-2 text-sm font-medium text-slate-700">
+                    Instructions
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
