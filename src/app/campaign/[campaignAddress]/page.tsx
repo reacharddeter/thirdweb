@@ -92,6 +92,7 @@ export default function CampaignPage() {
     <div className="mx-auto max-w-7xl px-2 mt-4 sm:px-6 lg:px-8">
       <div className="flex flex-row justify-between items-center">
         {!isLoadingName && <p className="text-4xl font-semibold">{name}</p>}
+
         {owner === account?.address && (
           <div className="flex flex-row">
             <button
@@ -103,6 +104,37 @@ export default function CampaignPage() {
           </div>
         )}
       </div>
+
+      {/* {owner === account?.address && (
+        <div className="flex flex-row">
+          <TransactionButton
+            transaction={() =>
+              prepareContractCall({
+                contract,
+                method: "function withdraw()",
+                params: [],
+              })
+            }
+            onTransactionConfirmed={async () => {
+              alert("Withdraw succesfully");
+            }}
+            theme={lightTheme()}
+            style={{
+              marginTop: "1rem",
+              backgroundColor: "green",
+              color: "white",
+              padding: "0.5rem 1rem",
+              borderRadius: "0.375rem",
+              cursor: "pointer",
+              fontWeight: "bold",
+              padding: "1rem",
+            }}
+          >
+            Withdraw
+          </TransactionButton>
+        </div>
+      )} */}
+
       <div className="my-4">
         <p className="text-lg font-semibold">Description:</p>
         <p>{description}</p>
